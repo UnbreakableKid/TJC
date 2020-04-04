@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="" />
+    <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/azureSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/play/AlwaysDefect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/play/MyStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strategy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Strategy.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/play/NewStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/NewStrategy.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +24,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ZcYzHN6aghjsgox13ZhldGiu7Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,9 +36,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/runClient.bat" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -33,17 +48,29 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+  <component name="RunManager">
+    <configuration default="true" type="BatchConfigurationType" factoryName="Batch">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runClient.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="runClient" type="BatchConfigurationType" factoryName="Batch" nameIsGenerated="true">
+      <module name="gt-game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runClient.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -58,16 +85,66 @@
       <workItem from="1585140112702" duration="301000" />
       <workItem from="1585142824827" duration="55000" />
       <workItem from="1585146002223" duration="6399000" />
+      <workItem from="1585959897689" duration="1182000" />
+      <workItem from="1585962352671" duration="296000" />
+      <workItem from="1586011511749" duration="3947000" />
+      <workItem from="1586017850663" duration="585000" />
+      <workItem from="1586018462773" duration="1033000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585142851950">
-      <screen x="62" y="0" width="1474" height="864" />
+    <state x="307" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586018586145">
+      <screen x="65" y="0" width="1855" height="1080" />
     </state>
     <state x="254" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1474.864@62.0.1474.864" timestamp="1585142851950" />
+    <state x="307" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018586145" />
+    <state x="672" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585962364728">
+      <screen x="65" y="0" width="1855" height="1080" />
+    </state>
+    <state x="672" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1585962364728" />
+    <state x="633" y="209" key="FileChooserDialogImpl" timestamp="1586018561980">
+      <screen x="65" y="0" width="1855" height="1080" />
+    </state>
+    <state x="633" y="209" key="FileChooserDialogImpl/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018561980" />
+    <state width="906" height="274" key="GridCell.Tab.0.bottom" timestamp="1586018603122">
+      <screen x="65" y="0" width="1855" height="1080" />
+    </state>
+    <state width="906" height="274" key="GridCell.Tab.0.bottom/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
+    <state width="906" height="274" key="GridCell.Tab.0.center" timestamp="1586018603122">
+      <screen x="65" y="0" width="1855" height="1080" />
+    </state>
+    <state width="906" height="274" key="GridCell.Tab.0.center/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
+    <state width="906" height="274" key="GridCell.Tab.0.left" timestamp="1586018603122">
+      <screen x="65" y="0" width="1855" height="1080" />
+    </state>
+    <state width="906" height="274" key="GridCell.Tab.0.left/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
+    <state width="906" height="274" key="GridCell.Tab.0.right" timestamp="1586018603122">
+      <screen x="65" y="0" width="1855" height="1080" />
+    </state>
+    <state width="906" height="274" key="GridCell.Tab.0.right/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
+    <state x="722" y="295" key="extract.method.dialog" timestamp="1586016453846">
+      <screen x="65" y="0" width="1855" height="1080" />
+    </state>
+    <state x="722" y="295" key="extract.method.dialog/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586016453846" />
   </component>
 </project>

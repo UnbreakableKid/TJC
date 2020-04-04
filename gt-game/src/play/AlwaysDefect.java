@@ -6,7 +6,7 @@ import gametree.GameNode;
 import gametree.GameNodeDoesNotExistException;
 import play.exception.InvalidStrategyException;
 
-public class NewStrategy  extends Strategy {
+public class AlwaysDefect  extends Strategy {
 
     @Override
     public void execute() throws InterruptedException {
@@ -123,11 +123,12 @@ public class NewStrategy  extends Strategy {
         double[] strategy = new double[n];
         for (int i = 0; i<n; i++)  strategy[i] = 0;
         if (P==1) { // if playing as player 1 then choose first action
-            strategy[0] = 1;
+            strategy[0] = 0;
+            strategy[1] = 1;
         }
         else { 		// if playing as player 2 then choose first or second action randomly
-            strategy[0] = 0.5;
-            strategy[1] = 0.5;
+            strategy[0] = 0;
+            strategy[1] = 1;
         }
         for (int i = 0; i<n; i++) myStrategy.put(labels[i], strategy[i]);
         return strategy;
@@ -139,3 +140,4 @@ public class NewStrategy  extends Strategy {
     }
 
 }
+
