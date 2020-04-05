@@ -133,7 +133,10 @@ public class FiniteRepetitionStrat extends Strategy{
             double[] strategy = new double[n];
 
             int iterations = myStrategy.getMaximumNumberOfIterations();
+            System.out.println( "ITERATIONS " + iterations);
             round ++;
+
+            System.out.println(round);
 
 
             for (int i = 0; i < n; i++) strategy[i] = 0;
