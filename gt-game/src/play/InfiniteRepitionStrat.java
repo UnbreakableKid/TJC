@@ -8,7 +8,7 @@ import play.exception.InvalidStrategyException;
 import java.util.Iterator;
 
 
-public class MyStrategy extends Strategy {
+public class InfiniteRepitionStrat extends Strategy {
 
     @Override
     public void execute() throws InterruptedException {
@@ -139,10 +139,14 @@ public class MyStrategy extends Strategy {
 
 
         for (int i = 0; i < n; i++) strategy[i] = 0;
-        if (P == 1) { // if playing as player 1 then choose first action
+        if (P == 1) {
 
-            if (myStrategy.getLastRoundOpponentScoreAsP1(t) == 4 || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
-                    || defectionLost < defectionGain || myStrategy.probabilityForNextIteration() <= 0.3) {
+            if (myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
+                    || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
+                    || defectionLost < defectionGain || myStrategy.probabilityForNextIteration() <= 0.35
+                    || myStrategy.getLastRoundSelfScoreAsP1(t) == 4
+                    || myStrategy.getLastRoundSelfScoreAsP2(t) == 4)
+            {
                 strategy[0] = 0;
                 strategy[1] = 1;
 
@@ -151,9 +155,14 @@ public class MyStrategy extends Strategy {
                 strategy[1] = 0;
             }
 
-        } else {        // if playing as player 2 then choose first or second action randomly
-            if (myStrategy.getLastRoundOpponentScoreAsP2(t) == 4 || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
-                    || defectionLost < defectionGain ||  myStrategy.probabilityForNextIteration() <= 0.3) {
+        } else {
+            if (myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
+                    || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
+                    || defectionLost < defectionGain
+                    ||  myStrategy.probabilityForNextIteration() <= 0.35
+                    || myStrategy.getLastRoundSelfScoreAsP1(t) == 4
+                    || myStrategy.getLastRoundSelfScoreAsP2(t) == 4)
+            {
                 strategy[0] = 0;
                 strategy[1] = 1;
 
