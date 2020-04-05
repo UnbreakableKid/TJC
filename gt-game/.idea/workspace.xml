@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/play/AlwaysCooperate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strategy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Strategy.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/play/FiniteRepetitionStrat.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/play/FiniteRepetitionStrat.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +69,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -83,6 +100,7 @@
       <workItem from="1586017850663" duration="585000" />
       <workItem from="1586018462773" duration="1591000" />
       <workItem from="1586096207135" duration="2248000" />
+      <workItem from="1586098852051" duration="723000" />
     </task>
     <servers />
   </component>
@@ -111,6 +129,10 @@
     </state>
     <state x="254" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1474.864@62.0.1474.864" timestamp="1585142851950" />
     <state x="307" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018586145" />
+    <state x="642" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586098866529">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="642" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/62.0.1474.864@62.0.1474.864" timestamp="1586098866529" />
     <state x="672" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585962364728">
       <screen x="65" y="0" width="1855" height="1080" />
     </state>
