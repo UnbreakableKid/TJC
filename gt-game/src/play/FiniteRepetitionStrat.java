@@ -9,7 +9,6 @@ import java.util.Iterator;
 
 public class FiniteRepetitionStrat extends Strategy{
 
-    int round = 0;
 
         @Override
         public void execute() throws InterruptedException {
@@ -133,10 +132,7 @@ public class FiniteRepetitionStrat extends Strategy{
             double[] strategy = new double[n];
 
             int iterations = myStrategy.getMaximumNumberOfIterations();
-            System.out.println( "ITERATIONS " + iterations);
-            round ++;
 
-            System.out.println(round);
 
 
             for (int i = 0; i < n; i++) strategy[i] = 0;
@@ -144,7 +140,7 @@ public class FiniteRepetitionStrat extends Strategy{
 
                 if (myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
                         || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
-                        || iterations - round <= 1
+                        || iterations <= 1
                 )
                 {
                     strategy[0] = 0;
@@ -158,7 +154,7 @@ public class FiniteRepetitionStrat extends Strategy{
             } else {
                 if (myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
                         || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
-                        || iterations - round <= 1
+                        || iterations <= 1
                         )
                 {
                     strategy[0] = 0;
