@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Strategy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Strategy.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
       <workItem from="1586011511749" duration="3947000" />
       <workItem from="1586017850663" duration="585000" />
       <workItem from="1586018462773" duration="1591000" />
-      <workItem from="1586096207135" duration="1525000" />
+      <workItem from="1586096207135" duration="1957000" />
     </task>
     <servers />
   </component>

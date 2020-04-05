@@ -142,8 +142,7 @@ public class FiniteRepetitionStrat extends Strategy{
                 if (myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
                         || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
                         || iterations - round <= 1
-                        || myStrategy.getLastRoundSelfScoreAsP1(t) == 4
-                        || myStrategy.getLastRoundSelfScoreAsP2(t) == 4)
+                )
                 {
                     strategy[0] = 0;
                     strategy[1] = 1;
@@ -157,8 +156,7 @@ public class FiniteRepetitionStrat extends Strategy{
                 if (myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
                         || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
                         || iterations - round <= 1
-                        || myStrategy.getLastRoundSelfScoreAsP1(t) == 4
-                        || myStrategy.getLastRoundSelfScoreAsP2(t) == 4)
+                        )
                 {
                     strategy[0] = 0;
                     strategy[1] = 1;
