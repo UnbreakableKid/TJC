@@ -8,7 +8,7 @@ import play.exception.InvalidStrategyException;
 import java.util.Iterator;
 
 
-public class InfiniteRepitionStrat extends Strategy {
+public class WinningStrategy extends Strategy {
 
     @Override
     public void execute() throws InterruptedException {
@@ -135,17 +135,28 @@ public class InfiniteRepitionStrat extends Strategy {
 
         int defectionGain = 1;
 
+        int roundsLeft = myStrategy.getMaximumNumberOfIterations();
+
         double defectionLost = (2 * beta) / (1- beta);
+
+        System.out.println(roundsLeft);
+        System.out.println(defectionLost < defectionGain);
+
 
 
         for (int i = 0; i < n; i++) strategy[i] = 0;
         if (P == 1) {
 
-            if (myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
+            if ( myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
                     || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
-                    || defectionLost < defectionGain || myStrategy.probabilityForNextIteration() <= 0.35
-                    || myStrategy.getLastRoundSelfScoreAsP1(t) == 4
-                    || myStrategy.getLastRoundSelfScoreAsP2(t) == 4)
+
+                    ||myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
+                    || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
+
+                    || defectionLost < defectionGain
+                    || (!myStrategy.isFirstRound() && (myStrategy.getLastRoundOpponentScoreAsP1(t) == 0
+                    || myStrategy.getLastRoundOpponentScoreAsP2(t) == 0))
+            || roundsLeft <= 1)
             {
                 strategy[0] = 0;
                 strategy[1] = 1;
@@ -158,10 +169,14 @@ public class InfiniteRepitionStrat extends Strategy {
         } else {
             if (myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
                     || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
+
+                    || myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
+                    || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
                     || defectionLost < defectionGain
-                    ||  myStrategy.probabilityForNextIteration() <= 0.35
-                    || myStrategy.getLastRoundSelfScoreAsP1(t) == 4
-                    || myStrategy.getLastRoundSelfScoreAsP2(t) == 4)
+                    || (!myStrategy.isFirstRound() && (myStrategy.getLastRoundOpponentScoreAsP1(t) == 0
+                    || myStrategy.getLastRoundOpponentScoreAsP2(t) == 0))
+                        || roundsLeft <= 1)
+
             {
                 strategy[0] = 0;
                 strategy[1] = 1;

@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/play/AlwaysCooperate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Strategy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Strategy.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/play/FiniteRepetitionStrat.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/play/FiniteRepetitionStrat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/play/InfiniteRepitionStrat.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/play/InfiniteRepitionStrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/WinningStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/play/LinearProgramming.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/LinearProgramming.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
@@ -101,6 +106,7 @@
       <workItem from="1586018462773" duration="1591000" />
       <workItem from="1586096207135" duration="2248000" />
       <workItem from="1586098852051" duration="723000" />
+      <workItem from="1586167170762" duration="31000" />
     </task>
     <servers />
   </component>
@@ -161,9 +167,17 @@
     </state>
     <state width="906" height="274" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586020054062" />
     <state width="906" height="274" key="GridCell.Tab.0.right/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
+    <state x="471" y="114" width="1040" height="836" key="SettingsEditor" timestamp="1586117211988">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="471" y="114" width="1040" height="836" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1586117211988" />
     <state x="722" y="295" key="extract.method.dialog" timestamp="1586016453846">
       <screen x="65" y="0" width="1855" height="1080" />
     </state>
     <state x="722" y="295" key="extract.method.dialog/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586016453846" />
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1586117682429">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1586117682429" />
   </component>
 </project>

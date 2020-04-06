@@ -138,10 +138,17 @@ public class FiniteRepetitionStrat extends Strategy{
             for (int i = 0; i < n; i++) strategy[i] = 0;
             if (P == 1) {
 
-                if (myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
+                if (!myStrategy.isFirstRound()
+                        &&(myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
                         || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
+                        || myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
+                        || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
+
+                        || (!myStrategy.isFirstRound() && (myStrategy.getLastRoundOpponentScoreAsP1(t) == 0
+                        || myStrategy.getLastRoundOpponentScoreAsP2(t) == 0))
+
                         || iterations <= 2
-                )
+                ))
                 {
                     strategy[0] = 0;
                     strategy[1] = 1;
@@ -152,10 +159,15 @@ public class FiniteRepetitionStrat extends Strategy{
                 }
 
             } else {
-                if (myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
+                if (!myStrategy.isFirstRound()
+                        &&(myStrategy.getLastRoundOpponentScoreAsP2(t) == 4
                         || myStrategy.getLastRoundOpponentScoreAsP2(t) == 1
+                        || myStrategy.getLastRoundOpponentScoreAsP1(t) == 4
+                        || myStrategy.getLastRoundOpponentScoreAsP1(t) == 1
                         || iterations <= 2
-                        )
+                        || (!myStrategy.isFirstRound() && (myStrategy.getLastRoundOpponentScoreAsP1(t) == 0
+                        || myStrategy.getLastRoundOpponentScoreAsP2(t) == 0))
+                        ))
                 {
                     strategy[0] = 0;
                     strategy[1] = 1;
