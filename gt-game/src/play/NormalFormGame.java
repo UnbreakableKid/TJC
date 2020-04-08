@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NormalFormGame {
-    List<String> rowActions; 	// actions of player 1
-    List<String> colActions; 	// actions of player 2
-    int nRow;					// number of actions of player 1
-    int nCol;					// number of actions of player 2
-    boolean[] pRow;				// if pRow[i]==false than action i of player 1 is not considered
-    boolean[] pCol;				// if pCol[j]==false than action j of player 2 is not considered
-    double[][] u1;				// utility matrix of player 1
-    double[][] u2;				// utility matrix of player 2
+    public List<String> rowActions; 	// actions of player 1
+    public List<String> colActions; 	// actions of player 2
+    public int nRow;					// number of actions of player 1
+    public int nCol;					// number of actions of player 2
+    public boolean[] pRow;				// if pRow[i]==false than action i of player 1 is not considered
+    public boolean[] pCol;				// if pCol[j]==false than action j of player 2 is not considered
+    public double[][] u1;				// utility matrix of player 1
+    public double[][] u2;				// utility matrix of player 2
+    public double[] strategy2;
+    public double[] strategy1;
+
 
     public NormalFormGame() {
     }
@@ -79,5 +82,65 @@ public class NormalFormGame {
             System.out.print("***********");
         System.out.println();
     }
+
+    public boolean doNash2x2(){
+        ArrayList<Integer> iRow = new ArrayList<>();
+        for (int i = 0; i < nRow; i++) {
+            if(pRow[i])
+                iRow.add(i);
+        }
+        ArrayList<Integer> iCol = new ArrayList<>();
+        for (int i = 0; i < nCol; i++) {
+            if(pCol[i])
+                iCol.add(i);
+        }
+        int n1 = iRow.size();
+        int n2 = iCol.size();
+        if((n1 != 2) || (n2 != 2)) return  false;
+
+        int r0 = iRow.get(0);
+        int r1 = iRow.get(1);
+        int c0 = iCol.get(0);
+        int c1 = iCol.get(1);
+
+        if((u1[r0][c0] + u1[r1][c1] - u1[r0][c1] - u1[r1][c0]) == 0.0)
+            return false;
+        double p = (u1[r1][c1] - u1[r0][c1])/ (u1[r0][c0] + u1[r1][c1] - u1[r0][c1] - u1[r1][c0]);
+        System.out.println("p = "  + p);
+        for (int i = 0; i < nCol; i++) {
+            strategy2[i] = 0.0;
+        }
+        strategy2[c0] = p;
+        strategy2[c1] = 1-p;
+
+        System.out.println("Strategy 2 " );
+        for (int i = 0; i < strategy2.length ; i++) {
+
+            System.out.println(" " + strategy2[i]);
+            
+        }
+        System.out.println();
+
+        if((u2[r0][c0]+u2[r1][c1] - u2[r0][c1] - u2[r1][c0]) == 0.0)
+            return false;
+        double q = (u2[r1][c1] - u2[r1][c0])/ (u2[r0][c0]+u2[r1][c1] - u2[r0][c1] - u2[r1][c0]);
+        System.out.println("q = " +   q);
+
+        for (int i = 0; i <nRow ; i++) {
+
+            strategy1[r0] = q;
+            strategy1[r1] = 1-q;
+            
+        }
+        System.out.println("Strategy 1 " );
+        for (int i = 0; i < strategy1.length ; i++) {
+
+            System.out.println(" " + strategy1[i]);
+
+        }
+
+        return  true;
+    }
+    
 
 }

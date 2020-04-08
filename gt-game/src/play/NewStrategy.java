@@ -83,10 +83,10 @@ public class NewStrategy  extends Strategy {
                 showUtility(2,U2);
                 NormalFormGame game = new NormalFormGame(U1,U2,labelsP1,labelsP2);
                 game.showGame();
-                double[] strategyP1 = setStrategy(1,labelsP1,myStrategy);
-                double[] strategyP2 = setStrategy(2,labelsP2,myStrategy);
-                showStrategy(1,strategyP1,labelsP1);
-                showStrategy(2,strategyP2,labelsP2);
+                double[] strategyP1 = game.strategy1;
+                double[] strategyP2 = game.strategy2;
+                //showStrategy(1,strategyP1,labelsP1);
+                //showStrategy(2,strategyP2,labelsP2);
                 try{
                     this.provideStrategy(myStrategy);
                     playComplete = true;
