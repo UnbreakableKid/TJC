@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/GLPKSolverPack.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/GLPKSolverPack.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/SCPSolver.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Docs/RelatorioT1_56982.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Docs/RelatorioT1_56982.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Docs/TJC torneio 1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Docs/TJC torneio 1.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Strategy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Strategy.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/play/FiniteRepetitionStrat.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/play/FiniteRepetitionStrat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/play/InfiniteRepitionStrat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/FiniteRepetitionStrat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/play/InfiniteRepitionStrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/WinningStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gt-game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gt-game.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/play/LinearProgramming.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/LinearProgramming.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,30 +27,46 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1ZcYzHN6aghjsgox13ZhldGiu7Z" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/runClient.bat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/SCPSolver.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LinearProgramming">
+    <configuration name="LinearProgramming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="play.LinearProgramming" />
+      <module name="gt-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="play.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="BatchConfigurationType" factoryName="Batch">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -73,6 +89,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LinearProgramming" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -107,6 +128,7 @@
       <workItem from="1586096207135" duration="2248000" />
       <workItem from="1586098852051" duration="723000" />
       <workItem from="1586167170762" duration="31000" />
+      <workItem from="1586306681233" duration="244000" />
     </task>
     <servers />
   </component>
@@ -129,6 +151,9 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="307" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586018586145">
       <screen x="65" y="0" width="1855" height="1080" />
@@ -143,33 +168,35 @@
       <screen x="65" y="0" width="1855" height="1080" />
     </state>
     <state x="672" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1585962364728" />
-    <state x="633" y="209" key="FileChooserDialogImpl" timestamp="1586018561980">
-      <screen x="65" y="0" width="1855" height="1080" />
+    <state x="631" y="209" key="FileChooserDialogImpl" timestamp="1586306897913">
+      <screen x="62" y="0" width="1858" height="1080" />
     </state>
+    <state x="631" y="209" key="FileChooserDialogImpl/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586306897912" />
     <state x="633" y="209" key="FileChooserDialogImpl/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018561980" />
-    <state width="906" height="274" key="GridCell.Tab.0.bottom" timestamp="1586020054062">
+    <state width="1815" height="274" key="GridCell.Tab.0.bottom" timestamp="1586306927735">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="906" height="274" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586020054062" />
+    <state width="1815" height="274" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586306927735" />
     <state width="906" height="274" key="GridCell.Tab.0.bottom/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
-    <state width="906" height="274" key="GridCell.Tab.0.center" timestamp="1586020054062">
+    <state width="1815" height="274" key="GridCell.Tab.0.center" timestamp="1586306927735">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="906" height="274" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586020054062" />
+    <state width="1815" height="274" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586306927735" />
     <state width="906" height="274" key="GridCell.Tab.0.center/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
-    <state width="906" height="274" key="GridCell.Tab.0.left" timestamp="1586020054062">
+    <state width="1815" height="274" key="GridCell.Tab.0.left" timestamp="1586306927735">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="906" height="274" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586020054062" />
+    <state width="1815" height="274" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586306927735" />
     <state width="906" height="274" key="GridCell.Tab.0.left/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
-    <state width="906" height="274" key="GridCell.Tab.0.right" timestamp="1586020054062">
+    <state width="1815" height="274" key="GridCell.Tab.0.right" timestamp="1586306927735">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="906" height="274" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586020054062" />
+    <state width="1815" height="274" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586306927735" />
     <state width="906" height="274" key="GridCell.Tab.0.right/65.0.1855.1080/1920.0.1920.1040@65.0.1855.1080" timestamp="1586018603122" />
-    <state x="471" y="114" width="1040" height="836" key="SettingsEditor" timestamp="1586117211988">
+    <state x="471" y="114" width="1040" height="836" key="SettingsEditor" timestamp="1586306903640">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
+    <state x="471" y="114" key="SettingsEditor/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1586306903640" />
     <state x="471" y="114" width="1040" height="836" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1586117211988" />
     <state x="722" y="295" key="extract.method.dialog" timestamp="1586016453846">
       <screen x="65" y="0" width="1855" height="1080" />
