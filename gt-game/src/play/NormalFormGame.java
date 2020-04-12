@@ -12,8 +12,7 @@ public class NormalFormGame {
     public boolean[] pCol;				// if pCol[j]==false than action j of player 2 is not considered
     public double[][] u1;				// utility matrix of player 1
     public double[][] u2;				// utility matrix of player 2
-    public double[] strategy2;
-    public double[] strategy1;
+
 
 
     public NormalFormGame() {
@@ -83,20 +82,25 @@ public class NormalFormGame {
         System.out.println();
     }
 
-    public boolean doNash2x2(){
+    public double[][] doNash2x2(){
+
+        double[] strategy2 = new double[2];
+        double[] strategy1 = new double[2];
+
+        System.out.println("doing nash");
         ArrayList<Integer> iRow = new ArrayList<>();
-        for (int i = 0; i < nRow; i++) {
+        for (int i = 0; i < nRow; i++)
             if(pRow[i])
                 iRow.add(i);
-        }
+
         ArrayList<Integer> iCol = new ArrayList<>();
-        for (int i = 0; i < nCol; i++) {
+        for (int i = 0; i < nCol; i++)
             if(pCol[i])
                 iCol.add(i);
-        }
+
         int n1 = iRow.size();
         int n2 = iCol.size();
-        if((n1 != 2) || (n2 != 2)) return  false;
+        if((n1 != 2) || (n2 != 2)) return  null;
 
         int r0 = iRow.get(0);
         int r1 = iRow.get(1);
@@ -104,42 +108,49 @@ public class NormalFormGame {
         int c1 = iCol.get(1);
 
         if((u1[r0][c0] + u1[r1][c1] - u1[r0][c1] - u1[r1][c0]) == 0.0)
-            return false;
+            return null;
+
         double p = (u1[r1][c1] - u1[r0][c1])/ (u1[r0][c0] + u1[r1][c1] - u1[r0][c1] - u1[r1][c0]);
-        System.out.println("p = "  + p);
-        for (int i = 0; i < nCol; i++) {
+
+        //System.out.println("p = "  + p);
+
+        for (int i = 0; i < nCol; i++)
             strategy2[i] = 0.0;
-        }
-        strategy2[c0] = p;
-        strategy2[c1] = 1-p;
 
-        System.out.println("Strategy 2 " );
-        for (int i = 0; i < strategy2.length ; i++) {
 
-            System.out.println(" " + strategy2[i]);
-            
-        }
-        System.out.println();
 
-        if((u2[r0][c0]+u2[r1][c1] - u2[r0][c1] - u2[r1][c0]) == 0.0)
-            return false;
-        double q = (u2[r1][c1] - u2[r1][c0])/ (u2[r0][c0]+u2[r1][c1] - u2[r0][c1] - u2[r1][c0]);
-        System.out.println("q = " +   q);
+        strategy2[c0] = Math.round(p * 100.0) / 100.0;;
+        strategy2[c1] = Math.round((1- p) * 100.0) / 100.0;
+
+//        System.out.println("Strategy 2 " );
+//        for (double v : strategy2) {
+//
+//            System.out.println(" " + v);
+//
+//        }
+//        System.out.println();
+
+        if((u2[r0][c0] + u2[r1][c1] - u2[r0][c1] - u2[r1][c0]) == 0.0)
+            return null;
+
+        double q = (u2[r1][c1] - u2[r1][c0])/ (u2[r0][c0] + u2[r1][c1] - u2[r0][c1] - u2[r1][c0]);
+        //System.out.println("q = " + q);
 
         for (int i = 0; i <nRow ; i++) {
 
-            strategy1[r0] = q;
-            strategy1[r1] = 1-q;
-            
+            strategy1[i] = 0.0;
         }
-        System.out.println("Strategy 1 " );
-        for (int i = 0; i < strategy1.length ; i++) {
+        strategy1[r0] = Math.round(q * 100.0) / 100.0;
+        strategy1[r1] = Math.round((1 -q) * 100.0) / 100.0;
 
-            System.out.println(" " + strategy1[i]);
+//        System.out.println("Strategy 1 " );
+//        for (double v : strategy1) {
+//
+//            System.out.println(" " + v);
+//
+//        }
 
-        }
-
-        return  true;
+        return new double[][]{strategy1, strategy2};
     }
     
 

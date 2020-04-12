@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 import gametree.GameNode;
 import gametree.GameNodeDoesNotExistException;
+import lp.IteratedDominance;
 import play.exception.InvalidStrategyException;
 
 public class NewStrategy  extends Strategy {
@@ -83,10 +84,18 @@ public class NewStrategy  extends Strategy {
                 showUtility(2,U2);
                 NormalFormGame game = new NormalFormGame(U1,U2,labelsP1,labelsP2);
                 game.showGame();
-                double[] strategyP1 = game.strategy1;
-                double[] strategyP2 = game.strategy2;
-                //showStrategy(1,strategyP1,labelsP1);
-                //showStrategy(2,strategyP2,labelsP2);
+                double[][] d;
+                IteratedDominance.solveDomination(game);
+                if((d = game.doNash2x2()) != null) {
+                    double[] strategyP1 = d[0];
+                    double[] strategyP2 = d[1];
+
+                    for (int z = 0; z<2; z++) myStrategy.put(labelsP1[z], strategyP1[z]);
+                    for (int z = 0; z<2; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
+
+                    showStrategy(1,strategyP1,labelsP1);
+                    showStrategy(2,strategyP2,labelsP2);
+                }
                 try{
                     this.provideStrategy(myStrategy);
                     playComplete = true;
