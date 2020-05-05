@@ -1,13 +1,17 @@
-package play;
-
-import java.util.Iterator;
+package Quiz2;
 
 import gametree.GameNode;
 import gametree.GameNodeDoesNotExistException;
 import lp.IteratedDominance;
+import lp.ZeroSum;
+import play.NormalFormGame;
+import play.PlayStrategy;
+import play.Strategy;
 import play.exception.InvalidStrategyException;
 
-public class NewStrategy  extends Strategy {
+import java.util.Iterator;
+
+public class ZeroSumStrategy extends Strategy {
 
     @Override
     public void execute() throws InterruptedException {
@@ -84,28 +88,20 @@ public class NewStrategy  extends Strategy {
                 showUtility(2,U2);
                 NormalFormGame game = new NormalFormGame(U1,U2,labelsP1,labelsP2);
                 game.showGame();
-                IteratedDominance.solveDomination(game);
-                game.showGame();
                 double[][] d;
-                if((d = game.doNash2x2()) != null) {
-                    System.out.println("doing nash");
 
-                    double[] strategyP1 = d[0];
-                    double[] strategyP2 = d[1];
+                d = ZeroSum.doZeroSum(game);
+                double[] strategyP1 = d[0];
+                double[] strategyP2 = d[1];
 
-                    for (int z = 0; z<strategyP1.length; z++) myStrategy.put(labelsP1[z], strategyP1[z]);
-                    for (int z = 0; z<strategyP2.length; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
+                for (int z = 0; z <strategyP1.length; z++) myStrategy.put(labelsP1[z], strategyP1[z]);
+                for (int z = 0; z<strategyP2.length; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
 
-                    showStrategy(1,strategyP1,labelsP1);
-                    showStrategy(2,strategyP2,labelsP2);
-                }
+                showStrategy(1,strategyP1,labelsP1);
+                showStrategy(2,strategyP2,labelsP2);
+
                 //do what was default in this strategy so it can work on all the quizz questions
-                else {
-                    double[] strategyP1 = setStrategy(1, labelsP1, myStrategy);
-                    double[] strategyP2 = setStrategy(2, labelsP2, myStrategy);
-                    showStrategy(1,strategyP1,labelsP1);
-                    showStrategy(2,strategyP2,labelsP2);
-                }
+
                 try{
                     this.provideStrategy(myStrategy);
                     playComplete = true;
@@ -154,7 +150,7 @@ public class NewStrategy  extends Strategy {
 
     public void showStrategy(int P, double[] strategy, String[] labels) {
         System.out.println("Strategy Player " + P + ":");
-        for (int i = 0; i<labels.length; i++) System.out.println("   " + strategy[i] + ":" + showLabel(labels[i]));
+        for (int i = 0; i<labels.length; i++) System.out.println("   " + Math.round(strategy[i] * 100.0) / 100.0 + ":" + showLabel(labels[i]));
     }
 
 }

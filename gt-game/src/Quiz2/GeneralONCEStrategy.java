@@ -1,13 +1,19 @@
-package play;
-
-import java.util.Iterator;
+package Quiz2;
 
 import gametree.GameNode;
 import gametree.GameNodeDoesNotExistException;
+import lp.GeneralSum;
 import lp.IteratedDominance;
+import play.NormalFormGame;
+import play.PlayStrategy;
+import play.Strategy;
 import play.exception.InvalidStrategyException;
 
-public class NewStrategy  extends Strategy {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class GeneralONCEStrategy extends Strategy {
 
     @Override
     public void execute() throws InterruptedException {
@@ -83,29 +89,25 @@ public class NewStrategy  extends Strategy {
                 showUtility(1,U1);
                 showUtility(2,U2);
                 NormalFormGame game = new NormalFormGame(U1,U2,labelsP1,labelsP2);
-                game.showGame();
                 IteratedDominance.solveDomination(game);
-                game.showGame();
-                double[][] d;
-                if((d = game.doNash2x2()) != null) {
-                    System.out.println("doing nash");
 
-                    double[] strategyP1 = d[0];
-                    double[] strategyP2 = d[1];
 
-                    for (int z = 0; z<strategyP1.length; z++) myStrategy.put(labelsP1[z], strategyP1[z]);
-                    for (int z = 0; z<strategyP2.length; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
+                System.out.println("Doing general NOW");
 
-                    showStrategy(1,strategyP1,labelsP1);
-                    showStrategy(2,strategyP2,labelsP2);
-                }
-                //do what was default in this strategy so it can work on all the quizz questions
-                else {
-                    double[] strategyP1 = setStrategy(1, labelsP1, myStrategy);
-                    double[] strategyP2 = setStrategy(2, labelsP2, myStrategy);
-                    showStrategy(1,strategyP1,labelsP1);
-                    showStrategy(2,strategyP2,labelsP2);
-                }
+                //GeneralSum.test(game);
+
+                GeneralSum.doGeneralSum(game, true);
+
+
+
+
+                double[] strategyP1 =  setStrategy(1, labelsP1, myStrategy);
+                double[] strategyP2 = setStrategy(2, labelsP2, myStrategy);
+
+
+
+
+
                 try{
                     this.provideStrategy(myStrategy);
                     playComplete = true;

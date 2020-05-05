@@ -12,46 +12,44 @@ public class IteratedDominance {
         int i = 0;
         int j = 0;
 
-        boolean changedRow = true;
-        boolean changedCol = true;
+        boolean changed = true;
 
         do{
 
-            if(i < game.pRow.length) {
-                while (i < game.pRow.length && !game.pRow[i])
-                    i++;
+            while (i < game.pRow.length && !game.pRow[i])
+                i++;
 
-                if (dominatedRow(i, game)) {
-                    System.out.println("Row " + i + " is dominated!");
-                    game.pRow[i] = false;
-                    changedRow = true;
-                    i = 0;
-                    j = 0;
-                } else {
-                    changedRow = false;
-                    i++;
-                }
-            }
-            game.showGame();
+            while (j < game.pCol.length && !game.pCol[j])
+                j++;
 
             if(j < game.pCol.length) {
-                while (j < game.pCol.length && !game.pCol[j])
-                    j++;
 
                 if (dominatedColumn(j, game)) {
-                    System.out.println("Column " + j + " is dominated!");
                     game.pCol[j] = false;
-                    changedCol = true;
+                    changed = true;
                     i = 0;
                     j = 0;
                 } else {
-                    changedCol = false;
+                    changed = false;
                     j++;
                 }
             }
-            game.showGame();
 
-        } while (i < (game.pRow.length) || j < (game.pCol.length) || changedRow || changedCol);
+            if(i < game.pRow.length) {
+
+                if (dominatedRow(i, game)) {
+                    game.pRow[i] = false;
+                    changed = true;
+                    i = 0;
+                    j = 0;
+                } else {
+                    changed = false;
+                    i++;
+                }
+            }
+
+        } while (i < (game.pRow.length) || j < (game.pCol.length) || changed);
+
     }
 
 
@@ -68,41 +66,44 @@ public class IteratedDominance {
                 jCol.add(j);
 
 
-        int n1 = iRow.size();
-        int n2 = jCol.size();
+        int numRows = iRow.size();
+        int namColumns = jCol.size();
 
-        double[] c = new double[n2];
+        if(numRows == 0 || namColumns == 0)
+            return false;
 
-        for(int j = 0; j <n2; j++)
+        double[] c = new double[namColumns];
+
+        for(int j = 0; j <namColumns; j++)
             c[j] = 1.0;
 
 
-        double[] b = new double[n1];
+        double[] b = new double[numRows];
 
-        for (int i = 0; i < n1; i++)
+        for (int i = 0; i < numRows; i++)
             b[i] = game.u2[iRow.get(i)][jDom];
 
 
-        double[][] A = new double[n1][n2];
+        double[][] A = new double[numRows][namColumns];
         double minUtil = 0;
 
-        for (int i = 0; i < n1; i++) {
-            for (int j = 0; j < n2; j++) {
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < namColumns; j++) {
                 A[i][j] = game.u2[iRow.get(i)][jCol.get(j)];
                 if(A[i][j] < minUtil)
                     minUtil = A[i][j];
             }
         }
 
-        double[] lb = new double[n2];
-        for (int j = 0; j < n2; j++)
+        double[] lb = new double[namColumns];
+        for (int j = 0; j < namColumns; j++)
             lb[j] = 0.0;
 
 
         if(minUtil < 0){
-            for (int i = 0; i < n1; i++) {
+            for (int i = 0; i < numRows; i++) {
                 b[i] = b[i] - minUtil;
-                for (int j = 0; j < n2; j++)
+                for (int j = 0; j < namColumns; j++)
                     A[i][j] = A[i][j] - minUtil;
 
             }
@@ -111,36 +112,35 @@ public class IteratedDominance {
         LinearProgram lp = new LinearProgram(c);
         lp.setMinProblem(true);
 
-        for (int i = 0; i < n1; i++)
+        for (int i = 0; i < numRows; i++)
             lp.addConstraint(new LinearBiggerThanEqualsConstraint(A[i], b[i], "c"+i));
 
         lp.setLowerbound(lb);
 
-        LinearProgramming.showLP(lp);
 
-        double[] x;
-
-        x = LinearProgramming.solveLP(lp);
+        double[] x = LinearProgramming.solveLP(lp);
 
         if(x != null)
-            return lp.evaluate(x) < 1.0;
+            return (Math.round(lp.evaluate(x) * 100.0) / 100.0) < 1.0;
 
         return false;
     }
 
     //as seen in class by prof
     public static boolean dominatedRow(int iDom, NormalFormGame game){
+        //region add active rows and columns
         ArrayList<Integer> iRow = new ArrayList<>();
-        for (int i = 0; i < game.nRow; i++)
+        for (int i = 0; i < game.nRow; i++) {
             if(game.pRow[i] && i != iDom)
                 iRow.add(i);
-
+        }
 
         ArrayList<Integer> jCol = new ArrayList<>();
-        for (int j = 0; j < game.nCol; j++)
+        for (int j = 0; j < game.nCol; j++) {
             if(game.pCol[j])
                 jCol.add(j);
-
+        }
+        //endregion
 
         int nRows = iRow.size();
         int nCols = jCol.size();
@@ -150,16 +150,16 @@ public class IteratedDominance {
 
         // set P terms to one
         double[] c = new double[nRows];
-        for (int i = 0; i < nRows; i++)
+        for (int i = 0; i < nRows; i++) {
             c[i] = 1.0;
-
+        }
 
         // set constraints independent term to
         // utilities of row to dominate
         double[] b = new double[nCols];
-        for (int j = 0; j < nCols; j++)
+        for (int j = 0; j < nCols; j++) {
             b[j] = game.u1[iDom][jCol.get(j)];
-
+        }
 
         // constraints matrix
         double[][] A = new double[nCols][nRows];
@@ -177,33 +177,32 @@ public class IteratedDominance {
 
         // Set lower bounds
         double[] lb = new double[nRows];
-        for (int i = 0; i < nRows; i++)
+        for (int i = 0; i < nRows; i++) {
             lb[i] = 0.0;
+        }
 
-
-        if(minUtil < 0)
+        if(minUtil < 0){
             for (int j = 0; j < nCols; j++) {
                 b[j] = b[j] - minUtil;
-                for (int i = 0; i < nRows; i++)
+                for (int i = 0; i < nRows; i++) {
                     A[j][i] = A[j][i] - minUtil;
-
+                }
             }
-
+        }
 
         LinearProgram lp = new LinearProgram(c);
         lp.setMinProblem(true);
-        for (int j = 0; j < nCols; j++)
+        for (int j = 0; j < nCols; j++) {
             lp.addConstraint(new LinearBiggerThanEqualsConstraint(A[j], b[j], "c"+j));
-
+        }
         lp.setLowerbound(lb);
-        double[] x;
 
-        x = LinearProgramming.solveLP(lp);
-        if(x != null)
-            return lp.evaluate(x) < 1.0;
+        double[] x = LinearProgramming.solveLP(lp);
 
+        if(x != null){
+            return (Math.round(lp.evaluate(x) * 100.0) / 100.0) < 1.0;
+        }
 
-        //else LinearProgramming.showSolution(x, lp);
         return false;
     }
 

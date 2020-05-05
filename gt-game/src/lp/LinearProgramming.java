@@ -84,6 +84,23 @@ public class LinearProgramming {
 		}
 		lp.setLowerbound(lb);
 	}
+
+	public static void setLP5(){
+		double[] c = { 1, 1};
+		double[] b = { 2, 2 };
+		double[][] A = {
+				{  8, 0 },
+				{ 0,  7 },
+		};
+		double[] lb = {0.0, 0.0};
+		lp = new LinearProgram(c);
+		lp.setMinProblem(true);
+
+		for (int i = 0; i <b.length ; i++) {
+			lp.addConstraint( new LinearBiggerThanEqualsConstraint(A[i], b[i], "c"+i));
+		}
+		lp.setLowerbound(lb);
+	}
 	
 	public static boolean solveLP() {
 		LinearProgramSolver solver  = SolverFactory.newDefault();  
@@ -190,6 +207,7 @@ public class LinearProgramming {
 	public static double[] solveLP(LinearProgram lp) {
 		LinearProgramSolver solver  = SolverFactory.newDefault();
 		x = solver.solve(lp);
+
 		return x;
 	}
 
@@ -205,7 +223,7 @@ public class LinearProgramming {
 	
 	
 	public static void main(String[] args) {
-		setLP4();
+		setLP5();
 		showLP();  
 		solveLP();
 		showSolution();
