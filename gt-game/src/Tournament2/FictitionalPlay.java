@@ -24,7 +24,22 @@ public class FictitionalPlay {
         round = 0;
     }
 
-    public void nextRound(){
+    public void nextRound(int i, int j){
+
+        round++;
+        freqP1[i]++;
+        freqP2[j]++;
+
+        for (int k = 0; k < probP1.length; k++) {
+
+        probP1[k] = freqP1[k]/(double)round;
+        }
+
+        for (int k = 0; k < probP2.length; k++) {
+
+            probP2[k] = freqP2[k]/(double)round;
+        }
+
 
     }
 

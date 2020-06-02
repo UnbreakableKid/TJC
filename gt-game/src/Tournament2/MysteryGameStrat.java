@@ -10,6 +10,7 @@ import play.PlayStrategy;
 import play.Strategy;
 import play.exception.InvalidStrategyException;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class MysteryGameStrat extends Strategy {
@@ -29,11 +30,13 @@ public class MysteryGameStrat extends Strategy {
                 break;
             boolean playComplete = false;
 
+            GameNode fatherP1 = null;
+            GameNode finalP2 = null;
             while (!playComplete) {
                 System.out.println("*******************************************************");
                 if (myStrategy.getFinalP1Node() != -1) {
                     GameNode finalP1 = this.tree.getNodeByIndex(myStrategy.getFinalP1Node());
-                    GameNode fatherP1 = null;
+                    fatherP1 = null;
                     if (finalP1 != null) {
                         try {
                             fatherP1 = finalP1.getAncestor();
@@ -46,7 +49,7 @@ public class MysteryGameStrat extends Strategy {
                     }
                 }
                 if (myStrategy.getFinalP2Node() != -1) {
-                    GameNode finalP2 = this.tree.getNodeByIndex(myStrategy.getFinalP2Node());
+                    finalP2 = this.tree.getNodeByIndex(myStrategy.getFinalP2Node());
                     GameNode fatherP2 = null;
                     if (finalP2 != null) {
                         try {
@@ -151,18 +154,17 @@ public class MysteryGameStrat extends Strategy {
                         int media;
                         int currentBest;
 
-                        currentBest = 0;
-                        for (int k = 0; k < U1.length; k++) {
+                        currentBest = Integer.MIN_VALUE;
+                        for (int k = 0; k < labelsP1.length; k++) {
 
                             media = 0;
-
-                            for (int l = 0; l < U1[k].length; l++) {
+                            for (int l = 0; l < labelsP2.length; l++) {
 
                                 media += U1[k][l];
 
                             }
 
-                            media /= U1[k].length;
+                            media /= labelsP2.length;
 
                             if (media > currentBest) {
                                 bestStrategyIndexP1 = k;
@@ -170,14 +172,14 @@ public class MysteryGameStrat extends Strategy {
                             }
                         }
 
-                        currentBest = 0;
+                        currentBest = Integer.MIN_VALUE;
                         for (int k = 0; k < U2.length; k++) {
 
                             media = 0;
 
                             for (int l = 0; l < U2[k].length; l++) {
 
-                                media += U2[k][l];
+                                media += U2[l][k];
 
                             }
 
@@ -196,10 +198,35 @@ public class MysteryGameStrat extends Strategy {
                         for (int z = 0; z < strategyP2.length; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
 
                     } else {
+
+                        
+                        int p1Idx = -1;
+                        int p2Idx = -1;
+
+                        for (int k = 0; k < labelsP1.length; k++) {
+                            if(fatherP1.getLabel().equals(labelsP1[k]))
+                                p1Idx = k;
+                        }
+
+                        for (int k = 0; k < labelsP2.length; k++) {
+                            if(finalP2.getLabel().equals(labelsP2[k]))
+                                p2Idx = k;
+                        }
+                        
+                        frequencies.nextRound(p1Idx, p2Idx);
+                        
                         double[][] strategies = game.bestResponses(frequencies.getProbP1(), frequencies.getProbP2());
 
+
+                        System.out.println("PRINTS");
+                        System.out.println(Arrays.toString(strategies[0]));
+                        System.out.println(Arrays.toString(strategies[1]));
                         for (int k = 0; k < labelsP1.length; k++) myStrategy.put(labelsP1[k], strategies[0][k]);
                         for (int k = 0; k < labelsP2.length; k++) myStrategy.put(labelsP2[k], strategies[1][k]);
+
+                        showStrategy(1, strategies[0], labelsP1);
+                        showStrategy(2, strategies[1], labelsP2);
+
 
                     }
                 }

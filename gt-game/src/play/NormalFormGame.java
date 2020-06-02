@@ -143,10 +143,9 @@ public class NormalFormGame {
 
             bestResponseP1 = new int[p2Strats.length];
 
-            for (int i = 0; i < p2Strats.length ; i++) {
-                for (int j = 0; j <u1[i].length ; j++) {
-                    bestResponseP1[i] = 0;
-                    if (u1[i][j] > u1[i][bestResponseP1[i]])
+            for (int i = 0; i < nCol ; i++) {
+                for (int j = 0; j <nRow ; j++) {
+                    if (u1[j][i] > u1[bestResponseP1[j]][i])
                         bestResponseP1[i] = j;
 
                 }
@@ -155,9 +154,8 @@ public class NormalFormGame {
 
         if (bestResponseP2 == null){
             bestResponseP2 = new int[p1Strats.length];
-            for (int i = 0; i < p1Strats.length ; i++) {
-                for (int j = 0; j <u2[i].length ; j++) {
-                    bestResponseP2[i] = 0;
+            for (int i = 0; i < nRow ; i++) {
+                for (int j = 0; j <nCol ; j++) {
                     if (u2[i][j] > u2[i][bestResponseP2[i]])
                         bestResponseP2[i] = j;
 
