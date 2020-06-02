@@ -97,8 +97,6 @@ public class MysteryGameStrat extends Strategy {
 
                 NormalFormGame game = new NormalFormGame(U1, U2, labelsP1, labelsP2);
 
-                IteratedDominance.solveDomination(game);
-
                 double[][] d;
 
                 double[] strategyP1 = new double[labelsP1.length];
@@ -107,6 +105,7 @@ public class MysteryGameStrat extends Strategy {
 
                 if (checkZeroSum(U1, U2)) {
 
+                    IteratedDominance.solveDomination(game);
 
                     int[][] tempU1 = new int[n1][n2];
                     int[][] tempU2 = new int[n1][n2];
@@ -125,8 +124,6 @@ public class MysteryGameStrat extends Strategy {
 
                         }
                     }
-
-
                     NormalFormGame game1 = new NormalFormGame(tempU2, U2, labelsP1, labelsP2);
                     d = ZeroSum.doZeroSum(game1);
                     strategyP1 = d[0];
@@ -149,53 +146,19 @@ public class MysteryGameStrat extends Strategy {
 
                     if (myStrategy.isFirstRound()) {
 
-                        int bestStrategyIndexP1 = 0;
-                        int bestStrategyIndexP2 = 0;
-                        int media;
-                        int currentBest;
+                        IteratedDominance.solveDomination(game);
 
-                        currentBest = Integer.MIN_VALUE;
-                        for (int k = 0; k < labelsP1.length; k++) {
 
-                            media = 0;
-                            for (int l = 0; l < labelsP2.length; l++) {
+                        double[][] results = game.doBestResponseNoInfo();
+                        strategyP1 = results[0];
+                        strategyP2 = results[1];
 
-                                media += U1[k][l];
-
-                            }
-
-                            media /= labelsP2.length;
-
-                            if (media > currentBest) {
-                                bestStrategyIndexP1 = k;
-                                currentBest = media;
-                            }
-                        }
-
-                        currentBest = Integer.MIN_VALUE;
-                        for (int k = 0; k < U2.length; k++) {
-
-                            media = 0;
-
-                            for (int l = 0; l < U2[k].length; l++) {
-
-                                media += U2[l][k];
-
-                            }
-
-                            media /= U2[k].length;
-
-                            if (media > currentBest) {
-                                bestStrategyIndexP2 = k;
-                                currentBest = media;
-                            }
-                        }
-
-                        strategyP1[bestStrategyIndexP1] = 1;
-                        strategyP2[bestStrategyIndexP2] = 1;
 
                         for (int z = 0; z < strategyP1.length; z++) myStrategy.put(labelsP1[z], strategyP1[z]);
                         for (int z = 0; z < strategyP2.length; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
+
+                        showStrategy(1, strategyP1, labelsP1);
+                        showStrategy(2, strategyP2, labelsP2);
 
                     } else {
 
@@ -204,6 +167,8 @@ public class MysteryGameStrat extends Strategy {
                         int p2Idx = -1;
 
                         for (int k = 0; k < labelsP1.length; k++) {
+
+
                             if(fatherP1.getLabel().equals(labelsP1[k]))
                                 p1Idx = k;
                         }
