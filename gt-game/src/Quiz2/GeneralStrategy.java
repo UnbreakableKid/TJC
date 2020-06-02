@@ -89,7 +89,6 @@ public class GeneralStrategy extends Strategy {
                 NormalFormGame game = new NormalFormGame(U1,U2,labelsP1,labelsP2);
                 IteratedDominance.solveDomination(game);
 
-
                 System.out.println("Doing general NOW");
 
                 game.showGame();

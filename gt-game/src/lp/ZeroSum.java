@@ -82,9 +82,6 @@ public class ZeroSum {
 
         }
 
-        if(minUtil<0){
-            System.out.println("LB negativo: " +  minUtil);
-        }
 
         double[] lb = new double[namColumns + 1];
         for (int j = 0; j < namColumns + 1; j++)
@@ -99,8 +96,6 @@ public class ZeroSum {
 
         lp.addConstraint(new LinearEqualsConstraint(A[numRows], b[numRows], "c"+numRows));
         lp.setLowerbound(lb);
-
-        LinearProgramming.showLP(lp);
 
         double[] x = LinearProgramming.solveLP(lp);
 
@@ -136,8 +131,6 @@ public class ZeroSum {
 
         c[numRows] = 1;
 
-        System.out.println(c.length);
-
 
         double[] b = new double[namColumns+1];
 
@@ -162,10 +155,6 @@ public class ZeroSum {
 
         }
 
-        if(minUtil<0){
-            System.out.println("LB negativo: " +  minUtil);
-        }
-
         double[] lb = new double[numRows + 1];
         for (int j = 0; j < numRows + 1; j++)
             lb[j] = 0;
@@ -181,8 +170,6 @@ public class ZeroSum {
         lp.addConstraint(new LinearEqualsConstraint(A[namColumns], b[namColumns], "c"+namColumns));
         lp.setLowerbound(lb);
 
-        LinearProgramming.showLP(lp);
-
         double[] x = LinearProgramming.solveLP(lp);
 
         System.out.println("here");
@@ -190,6 +177,8 @@ public class ZeroSum {
 
         return x;
     }
+
+
 
     public static void main(String[] args) {
         int[][] test1 = new int[2][3];

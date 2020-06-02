@@ -13,8 +13,6 @@ public class GeneralSum {
 
     public static void doGeneralSum(NormalFormGame game, boolean once) {
 
-
-
         int counter = 0;
 
 

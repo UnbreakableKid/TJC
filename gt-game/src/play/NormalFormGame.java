@@ -12,7 +12,8 @@ public class NormalFormGame {
     public boolean[] pCol;				// if pCol[j]==false than action j of player 2 is not considered
     public double[][] u1;				// utility matrix of player 1
     public double[][] u2;				// utility matrix of player 2
-
+    private int[] bestResponseP1;
+    private int[] bestResponseP2;
 
 
     public NormalFormGame() {
@@ -135,6 +136,46 @@ public class NormalFormGame {
 
         return new double[][]{strategy1, strategy2};
     }
-    
 
+    public double[][] bestResponses(double[] p1Strats, double[] p2Strats) {
+
+        if (bestResponseP1 == null){
+
+            bestResponseP1 = new int[p2Strats.length];
+
+            for (int i = 0; i < p2Strats.length ; i++) {
+                for (int j = 0; j <u1[i].length ; j++) {
+                    bestResponseP1[i] = 0;
+                    if (u1[i][j] > u1[i][bestResponseP1[i]])
+                        bestResponseP1[i] = j;
+
+                }
+            }
+        }
+
+        if (bestResponseP2 == null){
+            bestResponseP2 = new int[p1Strats.length];
+            for (int i = 0; i < p1Strats.length ; i++) {
+                for (int j = 0; j <u2[i].length ; j++) {
+                    bestResponseP2[i] = 0;
+                    if (u2[i][j] > u2[i][bestResponseP2[i]])
+                        bestResponseP2[i] = j;
+
+                }
+            }
+        }
+
+        double[] responsesP1 = new double[p1Strats.length];
+        double[] responsesP2 = new double[p2Strats.length];
+
+        for (int i = 0; i < p2Strats.length ; i++) {
+            responsesP1[bestResponseP1[i]] += p2Strats[i];
+        }
+
+        for (int i = 0; i < p1Strats.length ; i++) {
+            responsesP2[bestResponseP2[i]] += p1Strats[i];
+        }
+
+        return new double[][]{responsesP1, responsesP2};
+    }
 }

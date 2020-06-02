@@ -156,7 +156,8 @@ public class WinningStrategy extends Strategy {
                     || defectionLost < defectionGain
                     || (!myStrategy.isFirstRound() && (myStrategy.getLastRoundOpponentScoreAsP1(t) == 0
                     || myStrategy.getLastRoundOpponentScoreAsP2(t) == 0))
-            || roundsLeft <= 1)
+                    || roundsLeft <= 4)
+
             {
                 strategy[0] = 0;
                 strategy[1] = 1;
@@ -175,7 +176,7 @@ public class WinningStrategy extends Strategy {
                     || defectionLost < defectionGain
                     || (!myStrategy.isFirstRound() && (myStrategy.getLastRoundOpponentScoreAsP1(t) == 0
                     || myStrategy.getLastRoundOpponentScoreAsP2(t) == 0))
-                        || roundsLeft <= 1)
+                    || roundsLeft <= 4)
 
             {
                 strategy[0] = 0;
