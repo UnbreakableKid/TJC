@@ -30,13 +30,13 @@ public class MysteryGameStrat extends Strategy {
                 break;
             boolean playComplete = false;
 
-            GameNode fatherP1 = null;
-            GameNode finalP2 = null;
+            GameNode finalP1 = null;
+            GameNode fatherP2 = null;
             while (!playComplete) {
                 System.out.println("*******************************************************");
                 if (myStrategy.getFinalP1Node() != -1) {
-                    GameNode finalP1 = this.tree.getNodeByIndex(myStrategy.getFinalP1Node());
-                    fatherP1 = null;
+                    finalP1 = this.tree.getNodeByIndex(myStrategy.getFinalP1Node());
+                    GameNode fatherP1 = null;
                     if (finalP1 != null) {
                         try {
                             fatherP1 = finalP1.getAncestor();
@@ -49,8 +49,8 @@ public class MysteryGameStrat extends Strategy {
                     }
                 }
                 if (myStrategy.getFinalP2Node() != -1) {
-                    finalP2 = this.tree.getNodeByIndex(myStrategy.getFinalP2Node());
-                    GameNode fatherP2 = null;
+                    GameNode finalP2 = this.tree.getNodeByIndex(myStrategy.getFinalP2Node());
+                     fatherP2 = null;
                     if (finalP2 != null) {
                         try {
                             fatherP2 = finalP2.getAncestor();
@@ -104,8 +104,6 @@ public class MysteryGameStrat extends Strategy {
 
 
                 if (checkZeroSum(U1, U2)) {
-
-                    IteratedDominance.solveDomination(game);
 
                     int[][] tempU1 = new int[n1][n2];
                     int[][] tempU2 = new int[n1][n2];
@@ -166,16 +164,16 @@ public class MysteryGameStrat extends Strategy {
                         int p1Idx = -1;
                         int p2Idx = -1;
 
-                        for (int k = 0; k < labelsP1.length; k++) {
+                        for (int k = 0; k < labelsP2.length; k++) {
 
+                            if(finalP1.getLabel().equals(labelsP2[k]))
+                                p2Idx = k;
 
-                            if(fatherP1.getLabel().equals(labelsP1[k]))
-                                p1Idx = k;
                         }
 
-                        for (int k = 0; k < labelsP2.length; k++) {
-                            if(finalP2.getLabel().equals(labelsP2[k]))
-                                p2Idx = k;
+                        for (int k = 0; k < labelsP1.length; k++) {
+                            if(fatherP2.getLabel().equals(labelsP1[k]))
+                                p1Idx = k;
                         }
                         
                         frequencies.nextRound(p1Idx, p2Idx);

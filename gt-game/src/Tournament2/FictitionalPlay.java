@@ -19,7 +19,7 @@ public class FictitionalPlay {
         freqP2 = new int[nPlaysP2];
 
         probP1 = new double[nPlaysP1];
-        probP2 = new double[nPlaysP1];
+        probP2 = new double[nPlaysP2];
 
         round = 0;
     }
