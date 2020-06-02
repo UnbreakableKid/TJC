@@ -102,7 +102,7 @@ public class MysteryGameStrat extends Strategy {
                 double[] strategyP2 = new double[labelsP2.length];
 
 
-                if(checkZeroSum(U1, U2)){
+                if (checkZeroSum(U1, U2)) {
 
 
                     int[][] tempU1 = new int[n1][n2];
@@ -111,25 +111,25 @@ public class MysteryGameStrat extends Strategy {
                     for (int k = 0; k < n1; k++) {
                         for (int l = 0; l < n2; l++) {
 
-                            tempU2[k][l] = - U2[k][l];
+                            tempU2[k][l] = -U2[k][l];
 
                         }
                     }
                     for (int k = 0; k < n1; k++) {
                         for (int l = 0; l < n2; l++) {
 
-                            tempU1[k][l] = - U1[k][l];
+                            tempU1[k][l] = -U1[k][l];
 
                         }
                     }
 
 
-                    NormalFormGame game1 = new NormalFormGame(tempU2,U2,labelsP1,labelsP2);
+                    NormalFormGame game1 = new NormalFormGame(tempU2, U2, labelsP1, labelsP2);
                     d = ZeroSum.doZeroSum(game1);
                     strategyP1 = d[0];
 
 
-                    NormalFormGame game2 = new NormalFormGame(U1,tempU1,labelsP1,labelsP2);
+                    NormalFormGame game2 = new NormalFormGame(U1, tempU1, labelsP1, labelsP2);
                     game2.showGame();
                     d = ZeroSum.doZeroSum(game2);
 
@@ -139,13 +139,12 @@ public class MysteryGameStrat extends Strategy {
                     for (int z = 0; z < strategyP2.length; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
 
 
-                }
-                else {
+                } else {
                     if (frequencies == null) {
                         frequencies = new FictitionalPlay(labelsP1.length, labelsP2.length);
                     }
 
-                    if(myStrategy.isFirstRound()) {
+                    if (myStrategy.isFirstRound()) {
 
                         int bestStrategyIndexP1 = 0;
                         int bestStrategyIndexP2 = 0;
@@ -196,18 +195,14 @@ public class MysteryGameStrat extends Strategy {
                         for (int z = 0; z < strategyP1.length; z++) myStrategy.put(labelsP1[z], strategyP1[z]);
                         for (int z = 0; z < strategyP2.length; z++) myStrategy.put(labelsP2[z], strategyP2[z]);
 
-                    }
-                    else{
+                    } else {
                         double[][] strategies = game.bestResponses(frequencies.getProbP1(), frequencies.getProbP2());
 
-                        for (int k = 0; k<labelsP1.length; k++) myStrategy.put(labelsP1[k], strategies[0][k]);
-                        for (int k = 0; k<labelsP2.length; k++) myStrategy.put(labelsP2[k], strategies[1][k]);
-                        showStrategy(1, strategies[0], labelsP1);
-                        showStrategy(2, strategies[1], labelsP2);
-                    }
+                        for (int k = 0; k < labelsP1.length; k++) myStrategy.put(labelsP1[k], strategies[0][k]);
+                        for (int k = 0; k < labelsP2.length; k++) myStrategy.put(labelsP2[k], strategies[1][k]);
+
                     }
                 }
-
 
                 try {
                     this.provideStrategy(myStrategy);
@@ -219,6 +214,7 @@ public class MysteryGameStrat extends Strategy {
                 }
             }
         }
+    }
 
 
 

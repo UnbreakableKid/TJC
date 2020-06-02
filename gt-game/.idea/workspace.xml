@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/C1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C9.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EC9.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prob1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prob2a.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prob2b.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prob3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Quiz4/CoalitionalGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Quiz4/GraphsGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Quiz4/WeightedVotedGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tournament2/FictitionalPlay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tournament2/MysteryGameStrat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Strategy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Strategy.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Quiz2/GeneralStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Quiz2/GeneralStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lp/GeneralSum.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lp/GeneralSum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lp/ZeroSum.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lp/ZeroSum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/play/WinningStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/play/WinningStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Quiz2/GeneralStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz2/GeneralStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lp/GeneralSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lp/GeneralSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lp/ZeroSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lp/ZeroSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/play/NormalFormGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/NormalFormGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/play/WinningStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/play/WinningStrategy.java" afterDir="false" />
-    </list>
+    <list default="true" id="488d162f-18ee-4287-b718-4d2ee742f9b2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,7 +219,7 @@
       <workItem from="1590571114145" duration="1394000" />
       <workItem from="1591008130583" duration="16000" />
       <workItem from="1591008180523" duration="10454000" />
-      <workItem from="1591102426563" duration="2083000" />
+      <workItem from="1591102426563" duration="2622000" />
     </task>
     <servers />
   </component>
