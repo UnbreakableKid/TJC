@@ -180,10 +180,6 @@ public class MysteryGameStrat extends Strategy {
                         
                         double[][] strategies = game.bestResponses(frequencies.getProbP1(), frequencies.getProbP2());
 
-
-                        System.out.println("PRINTS");
-                        System.out.println(Arrays.toString(strategies[0]));
-                        System.out.println(Arrays.toString(strategies[1]));
                         for (int k = 0; k < labelsP1.length; k++) myStrategy.put(labelsP1[k], strategies[0][k]);
                         for (int k = 0; k < labelsP2.length; k++) myStrategy.put(labelsP2[k], strategies[1][k]);
 
